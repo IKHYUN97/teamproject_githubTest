@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: mybatis
+Bundle-SymbolicName: mybatis
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: mybatis
+Export-Package: ksmart.mybatis,
+ ksmart.mybatis.config,
+ ksmart.mybatis.controller,
+ ksmart.mybatis.dto,
+ ksmart.mybatis.interceptor,
+ ksmart.mybatis.mapper,
+ ksmart.mybatis.service
