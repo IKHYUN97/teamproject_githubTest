@@ -1,2 +1,2 @@
-# ksmart 43기 1TEAM
+# ksmart 43기 1팀
 파이팅!!
