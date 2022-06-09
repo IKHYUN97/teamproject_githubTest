@@ -1,2 +1,2 @@
 # ksmart 43기 1TEAM
-test
+# 파이팅!
