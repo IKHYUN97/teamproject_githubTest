@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head th:fragment="headFragment1">
+		<meta charset="UTF-8">
+		<title>ksmart43</title>
+		<!-- thymeleaf 링크 표현 구문  @{}  -->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+		
+		<!-- 사용자정의 css 선언 -->
+		<th:block layout:fragment="customCss1"></th:block>
+		<!-- 사용자정의 js 선언-->
+		<th:block layout:fragment="customJs1"></th:block>
+	</head>
+	<head th:fragment="headFragment">
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <!-- Meta, title, CSS, favicons, etc. -->
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	    <title>Gentelella Alela! | </title>
+	
+	    <!-- Bootstrap -->
+	    <link th:href="@{/admin/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+	    <!-- Font Awesome -->
+	    <link th:href="@{/admin/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+	    <!-- NProgress -->
+	    <link th:href="@{/admin/vendors/nprogress/nprogress.css}" rel="stylesheet">
+	    <!-- iCheck -->
+	    <link th:href="@{/admin/vendors/iCheck/skins/flat/green.css}" rel="stylesheet">
+		
+	    <!-- bootstrap-progressbar -->
+	    <link th:href="@{/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet">
+	    <!-- JQVMap -->
+	    <link th:href="@{/admin/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet"/>
+	    <!-- bootstrap-daterangepicker -->
+	    <link th:href="@{/admin/vendors/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
+	
+	    <!-- Custom Theme Style -->
+	    <link th:href="@{/admin/build/css/custom.min.css}" rel="stylesheet">
+	    
+	    <!-- 사용자정의 css 선언 -->
+		<th:block layout:fragment="customCss"></th:block>
+  	</head>
+</html>

@@ -19,4 +19,12 @@ public class login {
 	
 		return "login/userjoin";
 	}
+
+@GetMapping("/test")
+
+	public String test() {
+
+		return "adminpage/main";
+	}
+
 }
