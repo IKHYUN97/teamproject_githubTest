@@ -12,10 +12,20 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<br><br><br>
+ <style>
+ body {
+      min-height: 100vh;
+
+      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
+      background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+    }
+  </style>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <div class="row1 col-sm-6 col-md-4 col-md-offset-4">
             <h1 class="text-center login-title">로그인</h1>
             <div class="account-wall">
                 <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
@@ -32,7 +42,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                 <a href="#" class="pull-right need-help">비밀번호찾기</a><span class="clearfix"></span>
                 </form>
             </div>
-            <a href="#" class="text-center new-account">회원가입 </a>
+            <a th:href="@{userjoin}" class="text-center new-account">회원가입 </a>
         </div>
     </div>
 </div>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper	namespace="ks43team01.mapper.UserMapper">
+  
+    
+	  <resultMap type="ks43team01.dto.User" id="userResultMap">
+	  		<id column="user_id_code" property="userId"/>
+	  		<result column="user_pw" property="userPw"/>
+	  		<result column="user_name" property="userName"/>
+	  		<result column="user_contact" property="userContact"/>
+	  		<result column="user_email" property="userEmail"/>
+	  		<result column="user_withdraw_status" property="userStatus"/>
+	  		<result column="user_activity_area" property="userArea"/>
+	  		<result column="user_retention_Points" property="userPoint"/>
+	  		<result column="user_rating" property="userRating"/>
+	  		<result column="user_reg_date" property="userRreDate"/>
+	  		<result column="user_update_date" property="userUpDate"/>
+	  		<result column="level_num_code" property="userLevel"/>
+  		</resultMap>
+  
+  
+  	<insert id="addUserInsert" parameterType="ks43team01.dto.User">
+  		INSERT into tb_u_all_user
+		(	user_id_code 
+			,user_pw 
+			,user_name
+			,user_contact 
+			,user_email 
+			,user_withdraw_status 
+			,user_activity_area 
+			,user_retention_Points 
+			,user_rating 
+			,user_reg_date 
+			,user_update_date
+			,level_num_code
+			)values(
+			#{userId}
+			,#{userPw}
+			,#{userName}
+			,#{userContact}
+			,#{userEmail}
+			,'N'
+			,#{userArea}
+			,5000
+			,'뉴비'
+			,CURDATE()
+			,CURDATE()
+			,'3'
+		);
+  	</insert>
+  
+				
+	
+
+  	
+  </mapper>
