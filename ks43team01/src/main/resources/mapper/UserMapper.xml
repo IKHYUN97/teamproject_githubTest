@@ -3,8 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper	namespace="ks43team01.mapper.UserMapper">
-  
-    
+
 	  <resultMap type="ks43team01.dto.User" id="userResultMap">
 	  		<id column="user_id_code" property="userId"/>
 	  		<result column="user_pw" property="userPw"/>
@@ -18,10 +17,17 @@
 	  		<result column="user_reg_date" property="userRreDate"/>
 	  		<result column="user_update_date" property="userUpDate"/>
 	  		<result column="level_num_code" property="userLevel"/>
+	  		<association property="topcategory" javaType="ks43team01.dto.goodsTopCategory">
+	  			<id column="goods_top_category_name" property="goodsTopCategoryName"/>
+	  			<result column="goods_top_category_code" property="goodsTopCategoryCode"/>
+	  			<result column="user_id_code " property="userIdocde"/>
+	  			<result column="goods_top_category_reg_date" property="goodsTopCategoryRegDate"/>
+	  		</association>	
   		</resultMap>
   
   
   	<insert id="addUserInsert" parameterType="ks43team01.dto.User">
+  		/* 구매자회원가입*/
   		INSERT into tb_u_all_user
 		(	user_id_code 
 			,user_pw 
@@ -50,7 +56,19 @@
 			,'3'
 		);
   	</insert>
-  
+    
+    <select id="getTopCategory" resultType="ks43team01.dto.goodsTopCategory">
+		
+		/*판매가 비지니스 탑카테고리*/
+		SELECT 
+			g.goods_top_category_name as goodsTopCategoryName
+			,g.goods_top_category_code as goodsTopCategoryCode
+			,g.user_id_code as userIdocde
+			,g.goods_top_category_reg_date as goodsTopCategoryRegDate
+		FROM 
+			tb_g_goods_top_category as g
+    
+    </select>
 				
 	
 

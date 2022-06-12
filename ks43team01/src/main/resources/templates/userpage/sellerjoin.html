@@ -59,13 +59,14 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
             </div>
              <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="userName"></label>
-              <select  name="userName" required>
-              	 <option value="">: : : : 비지니스분야 : : : : </option>
-              	 <option value="디자인">디자인</option>
-              	 <option value="IT/프로그래밍">IT/프로그래밍</option>
-              	 <option value="영상/사진/음향">영상/사진/음향</option>
-              	 <option value="마케팅">마케팅</option>
+              <label for="topCategory">비지니스분야</label>
+              <select  name="topCategory" required>
+              	<th:block th:if="${not #lists.isEmpty(topcategory)}" th:each="g : ${topcategory}">
+              	 <option value="">: : : : 1차카테고리 : : : : </option>
+              	 <option th:value="${g.goodsTopCategoryName}">[[${l.goodsTopCategoryName}]]</option>
+              	 </th:block>
+              	 <th:block th:unless="${not #lists.isEmpty(topcategory)}">
+              	 	<option value="">등록된 카테고리가 없습니다</option>
               </select>
               <div class="invalid-feedback">
                 비지니스분야을 입력해주세요.
@@ -74,9 +75,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="name"></label>
+              <label for="name">상세비지니스분야</label>
                <select  name="userName" required>
-              	 <option value="">: : : : 상세비지니스분야 : : : : </option>
+              	 <option value="">: : : : 2차카테고리 : : : : </option>
               	 <option value="디자인">디자인</option>
               	 <option value="IT/프로그래밍">IT/프로그래밍</option>
               	 <option value="영상/사진/음향">영상/사진/음향</option>

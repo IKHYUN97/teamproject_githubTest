@@ -1,5 +1,7 @@
 package ks43team01.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ks43team01.dto.User;
+import ks43team01.dto.goodsTopCategory;
 import ks43team01.service.UserService;
 
 @Controller
@@ -34,7 +37,7 @@ public class UserController {
 	
 		userService.addUserInsert(user);
 		log.info("받아온멤버",user);
-		session.setAttribute("CheckId", user.getUserId());
+		session.setAttribute("CheckId", user.getUserId());//세션에 있는 정보를 입력한정보가 맞는지 확인//
 		session.setAttribute("CheckName", user.getUserName());
 		session.setAttribute("CheckPhone", user.getUserContact());
 		session.setAttribute("CheckEmail", user.getUserEmail());
@@ -44,8 +47,12 @@ public class UserController {
 		return "userpage/userjoinCheck";
 	}
 	
-	@PostMapping("/userjoinCheck")
+	@GetMapping("/sellerjoin")//가입내역을 확인하고 판매자회원추가진행로
 	public String userInsertCheck(Model model) {
+		
+		List<goodsTopCategory> topcategory = userService.getTopCategory();
+		model.addAttribute(topcategory);
+		log.info("탑카테고리들어온값   :{}",topcategory);
 		return "userpage/sellerjoin";
 	}
 	
