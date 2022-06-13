@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx" 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<head th:replace="fragments/head.html :: headFragment">
+</head>
+
+<header th:replace="fragments/header.html :: headerFragment"></header>
+<body>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+ <style>
+ body {
+      min-height: 100vh;
+
+      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
+      background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+    }
+  </style>
+<div class="container">
+    <div class="row">
+        <div class="row1 col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">로그인</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="아이디" required autofocus>
+                <input type="password" class="form-control" placeholder="비밀번호" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    로그인</button>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                   아이디저장
+                </label>
+                <a href="#" class="pull-right need-help">비밀번호찾기</a><span class="clearfix"></span>
+                </form>
+            </div>
+            <a th:href="@{userjoin}" class="text-center new-account">회원가입 </a>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+<footer th:replace="fragments/footer.html :: footerFragment"></footer>
+
+
